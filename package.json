@@ -1,0 +1,48 @@
+{
+  "name": "helios-dex",
+  "version": "1.0.0",
+  "description": "Complete DEX implementation for Helios Testnet with Uniswap V1/V2/V3 compatibility",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy/deploy-all.js",
+    "deploy:tokens": "hardhat run scripts/deploy/01-deploy-tokens.js",
+    "deploy:v1": "hardhat run scripts/deploy/02-deploy-v1.js",
+    "deploy:v2": "hardhat run scripts/deploy/03-deploy-v2.js",
+    "deploy:v3-core": "hardhat run scripts/deploy/04-deploy-v3-core.js",
+    "deploy:v3-periphery": "hardhat run scripts/deploy/05-deploy-v3-periphery.js",
+    "deploy:utils": "hardhat run scripts/deploy/06-deploy-utils.js",
+    "deploy:universal": "hardhat run scripts/deploy/07-deploy-universal-router.js",
+    "deploy:helios": "hardhat run scripts/deploy/deploy-all.js --network helios",
+    "init:pools:v1": "hardhat run scripts/initialize/init-pools-v1.js",
+    "init:pools:v2": "hardhat run scripts/initialize/init-pools-v2.js",
+    "init:pools:v3": "hardhat run scripts/initialize/init-pools-v3.js",
+    "init:pools:helios": "hardhat run scripts/initialize/init-pools-v2.js --network helios",
+    "generate:abi": "node scripts/generate/generate-abi-bytecode.js",
+    "generate:verification": "node scripts/generate/generate-verification-json.js",
+    "generate:all": "npm run generate:abi && npm run generate:verification",
+    "node": "hardhat node",
+    "coverage": "hardhat coverage",
+    "size": "hardhat size-contracts",
+    "clean": "hardhat clean"
+  },
+  "keywords": [
+    "defi",
+    "uniswap",
+    "dex",
+    "helios",
+    "ethereum",
+    "smart-contracts",
+    "v1",
+    "v2", 
+    "v3"
+  ],
+  "author": "Helios DEX Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "hardhat": "^2.26.1"
+  }
+}
