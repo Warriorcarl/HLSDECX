@@ -3,13 +3,26 @@ require("@nomicfoundation/hardhat-toolbox");
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
-    version: "0.8.20", // Use a single version to avoid download issues
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
+    compilers: [
+      {
+        version: "0.8.20",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
       },
-    },
+      {
+        version: "0.7.6", // For V3 core contracts compatibility
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 800,
+          },
+        },
+      }
+    ],
   },
   networks: {
     hardhat: {
@@ -24,7 +37,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      helios: "dummy_api_key", // Helios explorer might not require API key
+      helios: "dummy_api_key",
     },
     customChains: [
       {
