@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import '../interfaces/IUniswapV2Pair.sol';
-import '../interfaces/IUniswapV2Factory.sol';
+import '../../interfaces/IUniswapV2Pair.sol';
+import '../../interfaces/IUniswapV2Factory.sol';
 import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
-import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
+import '@openzeppelin/contracts/utils/ReentrancyGuard.sol';
 
 contract UniswapV2Pair is IUniswapV2Pair, ERC20, ReentrancyGuard {
     using SafeMath for uint;
