@@ -22,6 +22,7 @@ A comprehensive DeFi ecosystem implementation for Helios Testnet, featuring comp
 - **Price Oracles**: TWAP price feeds with V3 enhancement
 - **Multicall Support**: Batch transactions for gas efficiency
 
+
 ## 🔧 Helios Testnet Configuration
 
 - **Network**: Helios Testnet
@@ -31,6 +32,7 @@ A comprehensive DeFi ecosystem implementation for Helios Testnet, featuring comp
 - **Native Token**: HLS (Helios), 18 decimals
 - **HLS Target Price**: $10,000 USD
 
+
 ## 📁 Project Structure
 
 ```
@@ -39,11 +41,7 @@ contracts/
 │   ├── UniswapFactory.sol          # V1 factory for creating exchanges
 │   └── UniswapExchange.sol         # V1 exchange with HLS support
 ├── v2/                             # (from existing implementation)
-│   ├── core/
-│   │   ├── UniswapV2Factory.sol
-│   │   └── UniswapV2Pair.sol
-│   └── periphery/
-│       └── UniswapV2Router02.sol
+
 ├── v3/
 │   ├── core/
 │   │   ├── UniswapV3Factory.sol    # V3 factory with fee tiers
@@ -84,6 +82,7 @@ test/
 ├── v2/                             # V2 tests  
 ├── v3/                             # V3 tests
 └── integration/                    # Cross-version tests
+
 ```
 
 ## 🚀 Quick Start
@@ -151,6 +150,7 @@ npx hardhat run scripts/initialize/init-pools-v2.js --network helios
 
 # Initialize V3 pools
 npx hardhat run scripts/initialize/init-pools-v3.js --network helios
+
 ```
 
 ### Testing
@@ -279,6 +279,7 @@ The Universal Router automatically:
 ## 🧪 Development & Testing
 
 ### Local Testing
+
 ```bash
 # Start local node
 npx hardhat node
@@ -334,6 +335,7 @@ After deployment, addresses are saved in `./deployments/`:
 - **Price Discovery**: Automatic price balancing across versions
 - **MEV Protection**: Built-in protection against MEV extraction
 - **Slippage Minimization**: Optimal routing reduces slippage
+
 
 ## ⚠️ Disclaimer
 

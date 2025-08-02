@@ -4,6 +4,7 @@ const path = require('path');
 async function main() {
     console.log("Generating ABI and bytecode files for all versions...");
 
+
     const artifactsDir = './artifacts/contracts';
     const outputDir = './deployments/abis';
 
@@ -106,16 +107,19 @@ async function main() {
 export const contracts = ${JSON.stringify(allContracts, null, 2)};
 
 // Flat exports for backward compatibility
+
 export const ABIS = ${JSON.stringify(abiExports, null, 2)};
 
 export const BYTECODES = ${JSON.stringify(bytecodeExports, null, 2)};
 
 // Individual ABI exports
+
 ${Object.keys(abiExports).map(name => 
     `export const ${name}ABI = ABIS.${name};`
 ).join('\n')}
 
 // Individual bytecode exports
+
 ${Object.keys(bytecodeExports).map(name => 
     `export const ${name}Bytecode = BYTECODES.${name};`
 ).join('\n')}
@@ -161,6 +165,7 @@ export const HELIOS_CONFIG = {
         targetPrice: 10000 // USD
     }
 };
+
 `;
 
     fs.writeFileSync(path.join(outputDir, 'index.js'), jsContent);
@@ -209,6 +214,7 @@ export declare const contracts: AllContracts;
 export declare const ABIS: { [key: string]: any[] };
 export declare const BYTECODES: { [key: string]: string };
 
+
 ${Object.keys(abiExports).map(name => 
     `export declare const ${name}ABI: any[];`
 ).join('\n')}
@@ -232,6 +238,7 @@ export declare const VERSION_INFO: {
 };
 
 export declare const HELIOS_CONFIG: NetworkConfig;
+
 `;
 
     fs.writeFileSync(path.join(outputDir, 'index.d.ts'), tsContent);
@@ -285,11 +292,13 @@ export declare const HELIOS_CONFIG: NetworkConfig;
     console.log(`   V3 contracts: ${summary.versions.v3.totalContracts}`);
     console.log(`   Token contracts: ${summary.tokens.totalContracts}`);
     console.log(`   Utility contracts: ${summary.utils.totalContracts}`);
+
 }
 
 main()
     .then(() => {
         console.log("\n✅ Multi-version ABI and bytecode generation complete!");
+
         process.exit(0);
     })
     .catch((error) => {

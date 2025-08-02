@@ -2,6 +2,7 @@
   "name": "helios-dex",
   "version": "1.0.0",
   "description": "Complete DEX implementation for Helios Testnet with Uniswap V1/V2/V3 compatibility",
+
   "main": "index.js",
   "scripts": {
     "test": "hardhat test",
@@ -18,6 +19,7 @@
     "init:pools:v1": "hardhat run scripts/initialize/init-pools-v1.js",
     "init:pools:v2": "hardhat run scripts/initialize/init-pools-v2.js",
     "init:pools:v3": "hardhat run scripts/initialize/init-pools-v3.js",
+
     "init:pools:helios": "hardhat run scripts/initialize/init-pools-v2.js --network helios",
     "generate:abi": "node scripts/generate/generate-abi-bytecode.js",
     "generate:verification": "node scripts/generate/generate-verification-json.js",
