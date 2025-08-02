@@ -40,7 +40,7 @@
     "v2", 
     "v3"
   ],
-  "author": "Helios DEX Team",
+  "author": "Copilot",
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
