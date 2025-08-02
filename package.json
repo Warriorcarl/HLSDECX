@@ -1,14 +1,36 @@
 {
-  "name": "defi",
+  "name": "helios-dex",
   "version": "1.0.0",
+  "description": "Complete DEX implementation for Helios Testnet with Uniswap V1/V2 compatibility",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy/deploy-all.js",
+    "deploy:tokens": "hardhat run scripts/deploy/01-deploy-tokens.js",
+    "deploy:v2": "hardhat run scripts/deploy/03-deploy-v2.js",
+    "deploy:utils": "hardhat run scripts/deploy/06-deploy-utils.js",
+    "deploy:helios": "hardhat run scripts/deploy/deploy-all.js --network helios",
+    "init:pools": "hardhat run scripts/initialize/init-pools-v2.js",
+    "init:pools:helios": "hardhat run scripts/initialize/init-pools-v2.js --network helios",
+    "generate:abi": "node scripts/generate/generate-abi-bytecode.js",
+    "generate:verification": "node scripts/generate/generate-verification-json.js",
+    "generate:all": "npm run generate:abi && npm run generate:verification",
+    "node": "hardhat node",
+    "coverage": "hardhat coverage",
+    "size": "hardhat size-contracts",
+    "clean": "hardhat clean"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "defi",
+    "uniswap",
+    "dex",
+    "helios",
+    "ethereum",
+    "smart-contracts"
+  ],
+  "author": "Helios DEX Team",
+  "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
     "@openzeppelin/contracts": "^5.4.0",
